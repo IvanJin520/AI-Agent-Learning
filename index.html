@@ -1,222 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Week 1 AI Agent Learning Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-        }
-        .tabs {
-            display: flex;
-            cursor: pointer;
-            justify-content: center;
-        }
-        .tab {
-            padding: 14px 20px;
-            background: #f1f1f1;
-            margin: 0 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .tab.active {
-            background: white;
-            border-bottom: none;
-        }
-        .content {
-            padding: 20px;
-            display: none;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin: 0 5px;
-        }
-        .content.active {
-            display: block;
-        }
-        .collapsible {
-            background-color: #e2e2e2;
-            color: #444;
-            cursor: pointer;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-        .active, .collapsible:hover {
-            background-color: #ccc;
-        }
-        .content-section {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: #f9f9f9;
-        }
-        .percentage-bar {
-            width: 100%;
-            background-color: #f3f3f3;
-            border-radius: 5px;
-        }
-        .percentage-fill {
-            height: 20px;
-            background-color: #4CAF50;
-            width: 0;
-            border-radius: 5px;
-        }
-        /* Responsive design */
-        @media (max-width: 600px) {
-            .tabs {
-                flex-direction: column;
-            }
-        }
-    </style>
+    <title>周一 AI 代理学习仪表板</title>
 </head>
 <body>
-    <header>
-        <h1>Week 1 AI Agent Learning Dashboard</h1>
-    </header>
+    <h1>星期 1 AI 代理学习仪表板</h1>
 
-    <div class="tabs">
-        <div class="tab" data-day="1">Day 1</div>
-        <div class="tab" data-day="2">Day 2</div>
-        <div class="tab" data-day="3">Day 3</div>
-        <div class="tab" data-day="4">Day 4</div>
-        <div class="tab" data-day="5">Day 5</div>
-    </div>
+    <h2>学习目标</h2>
+    <ul>
+        <li>理解 AI 代理的基本概念</li>
+        <li>学习 AI 的应用领域</li>
+        <li>掌握基础的机器学习理论</li>
+        <li>参与小组讨论并提出问题</li>
+        <li>完成项目任务并进行进度跟踪</li>
+    </ul>
 
-    <div id="day-1" class="content">
-        <h2>Day 1: Introduction to AI Agents</h2>
-        <p><strong>Learning Objectives:</strong> Understand the basics of AI Agents.</p>
-        <p><strong>Video Links:</strong> 
-            <a href="https://bilibili.com/video/yourvideo1">Video 1 (Bilibili)</a>, 
-            <a href="https://zhihu.com/video/yourvideo1">Video 1 (Zhihu)</a>
-        </p>
-        <h3>Quiz Questions:</h3>
-        <p><strong>MCQ:</strong> What is an AI Agent? 
-            A. Just a program 
-            B. A program that can act autonomously 
-            C. A human-like robot 
-            D. None of the above
-        </p>
-        <p><strong>Open-ended:</strong> Describe your understanding of AI Agents in your words.</p>
-        <h3>Project Assignment:</h3>
-        <p>Analyze GDS reporting Agent costs in the context of the upcoming project.</p>
-    </div>
-    <div id="day-2" class="content">
-        <h2>Day 2: Deep Dive into AI Concepts</h2>
-        <p><strong>Learning Objectives:</strong> Gain insights into key AI concepts.</p>
-        <p><strong>Video Links:</strong> 
-            <a href="https://bilibili.com/video/yourvideo2">Video 2 (Bilibili)</a>, 
-            <a href="https://zhihu.com/video/yourvideo2">Video 2 (Zhihu)</a>
-        </p>
-        <h3>Quiz Questions:</h3>
-        <p><strong>MCQ:</strong> Which of the following is NOT a type of AI? 
-            A. Reactive 
-            B. Limited Memory 
-            C. General AI 
-            D. Specific AI
-        </p>
-        <p><strong>Open-ended:</strong> What do you think is the most significant aspect of AI?</p>
-        <h3>Project Assignment:</h3>
-        <p>Further analyze GDS reporting Agent costs with deeper insights.</p>
-    </div>
-    <div id="day-3" class="content">
-        <h2>Day 3: Implementing AI Agents</h2>
-        <p><strong>Learning Objectives:</strong> Learn how to implement basic AI Agents.</p>
-        <p><strong>Video Links:</strong> 
-            <a href="https://bilibili.com/video/yourvideo3">Video 3 (Bilibili)</a>, 
-            <a href="https://zhihu.com/video/yourvideo3">Video 3 (Zhihu)</a>
-        </p>
-        <h3>Quiz Questions:</h3>
-        <p><strong>MCQ:</strong> What programming language is often used for AI? 
-            A. Python 
-            B. Java 
-            C. C++ 
-            D. All of the above
-        </p>
-        <p><strong>Open-ended:</strong> What challenges do you foresee in AI Agent implementation?</p>
-        <h3>Project Assignment:</h3>
-        <p>Work on the implementation of the analysis module for GDS reporting Agent costs.</p>
-    </div>
-    <div id="day-4" class="content">
-        <h2>Day 4: Monitoring and Evaluation</h2>
-        <p><strong>Learning Objectives:</strong> Understand how to monitor and evaluate AI Agents.</p>
-        <p><strong>Video Links:</strong> 
-            <a href="https://bilibili.com/video/yourvideo4">Video 4 (Bilibili)</a>, 
-            <a href="https://zhihu.com/video/yourvideo4">Video 4 (Zhihu)</a>
-        </p>
-        <h3>Quiz Questions:</h3>
-        <p><strong>MCQ:</strong> What is critical for monitoring AI performance? 
-            A. Data analysis 
-            B. User feedback 
-            C. Both A and B 
-            D. None of the above
-        </p>
-        <p><strong>Open-ended:</strong> What metrics would you consider vital for evaluating AI agents?</p>
-        <h3>Project Assignment:</h3>
-        <p>Evaluate the initial analysis performed on GDS reporting Agent costs and refine it.</p>
-    </div>
-    <div id="day-5" class="content">
-        <h2>Day 5: Final Project Work and Review</h2>
-        <p><strong>Learning Objectives:</strong> Consolidate learning and prepare for the final project.</p>
-        <p><strong>Video Links:</strong> 
-            <a href="https://bilibili.com/video/yourvideo5">Video 5 (Bilibili)</a>, 
-            <a href="https://zhihu.com/video/yourvideo5">Video 5 (Zhihu)</a>
-        </p>
-        <h3>Quiz Questions:</h3>
-        <p><strong>MCQ:</strong> What is the final assignment about? 
-            A. Presenting findings 
-            B. Analyzing data 
-            C. Both A and B 
-            D. None of the above
-        </p>
-        <p><strong>Open-ended:</strong> Reflect on your journey through Week 1 and your expectations moving forward.</p>
-        <h3>Project Assignment:</h3>
-        <p>Complete the GDS reporting Agent costs final analysis and prepare a presentation.</p>
-    </div>
+    <h2>视频链接</h2>
+    <ul>
+        <li><a href="https://example.com/video1">视频 1: AI 概述</a></li>
+        <li><a href="https://example.com/video2">视频 2: 机器学习基础</a></li>
+    </ul>
 
-    <div class="percentage-bar">
-        <div class="percentage-fill" style="width: 50%;"></div>
-    </div>
-    <script>
-        var tabs = document.querySelectorAll('.tab');
-        tabs.forEach(function(tab) {
-            tab.addEventListener('click', function() {
-                var day = this.getAttribute('data-day');
-                document.querySelectorAll('.content').forEach(function(content) {
-                    content.classList.remove('active');
-                });
-                document.querySelector('#day-' + day).classList.add('active');
-                tabs.forEach(function(t) {
-                    t.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
+    <h2>测验问题及答案</h2>
+    <ul>
+        <li><strong>问题 1:</strong> 什么是 AI 代理？<br><em>答案:</em> AI 代理是可以自主执行任务的程序。</li>
+        <li><strong>问题 2:</strong> 机器学习的三种类型是什么？<br><em>答案:</em> 监督学习、无监督学习和强化学习。</li>
+    </ul>
 
-        var collapsibles = document.getElementsByClassName('collapsible');
-        for (let i = 0; i < collapsibles.length; i++) {
-            collapsibles[i].addEventListener('click', function() {
-                this.classList.toggle('active');
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <h2>项目任务</h2>
+    <p>创建一个简单的 AI 代理，能够与用户进行基本对话。</p>
+
+    <h2>进度跟踪</h2>
+    <p>请在每周结束时更新您的学习进度。</p>
+
+    <h2>学习笔记</h2>
+    <p>在此处记录重要的学习笔记和反思。</p>
 </body>
 </html>
