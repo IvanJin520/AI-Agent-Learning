@@ -3,38 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Agent Learning Dashboard - Week 1</title>
+    <title>Week 1 AI Agent Learning Dashboard</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1, h2, h3 { color: #333; }
-        ul { list-style-type: none; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            cursor: pointer;
+            justify-content: center;
+        }
+        .tab {
+            padding: 14px 20px;
+            background: #f1f1f1;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .tab.active {
+            background: white;
+            border-bottom: none;
+        }
+        .content {
+            padding: 20px;
+            display: none;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .content.active {
+            display: block;
+        }
+        .collapsible {
+            background-color: #e2e2e2;
+            color: #444;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+        .active, .collapsible:hover {
+            background-color: #ccc;
+        }
+        .content-section {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f9f9f9;
+        }
+        .percentage-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+        }
+        .percentage-fill {
+            height: 20px;
+            background-color: #4CAF50;
+            width: 0;
+            border-radius: 5px;
+        }
+        /* Responsive design */
+        @media (max-width: 600px) {
+            .tabs {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>AI Agent Learning Dashboard - Week 1</h1>
-    <h2>Learning Objectives</h2>
-    <ul>
-        <li>Understand the fundamentals of AI Agents</li>
-        <li>Learn basic algorithms for decision making</li>
-        <li>Explore different types of AI Agents</li>
-    </ul>
-    <h2>Video Resources</h2>
-    <ul>
-        <li><a href="https://example.com/video1">Introduction to AI Agents</a></li>
-        <li><a href="https://example.com/video2">Basic Algorithms Explained</a></li>
-    </ul>
-    <h2>Quiz Questions</h2>
-    <h3>Quiz for Week 1</h3>
-    <ol>
-        <li>What is an AI Agent?<br/>Answer: An entity that perceives its environment and takes actions.
-        </li>
-        <li>Which of the following is a type of AI agent?<br/>Answer: Reactive agent, Deliberative agent.
-        </li>
-    </ol>
-    <h2>Project Assignments</h2>
-    <ul>
-        <li>Create a simple AI agent that can navigate a maze.</li>
-        <li>Submit a report on the algorithms used.</li>
-    </ul>
+    <header>
+        <h1>Week 1 AI Agent Learning Dashboard</h1>
+    </header>
+
+    <div class="tabs">
+        <div class="tab" data-day="1">Day 1</div>
+        <div class="tab" data-day="2">Day 2</div>
+        <div class="tab" data-day="3">Day 3</div>
+        <div class="tab" data-day="4">Day 4</div>
+        <div class="tab" data-day="5">Day 5</div>
+    </div>
+
+    <div id="day-1" class="content">
+        <h2>Day 1: Introduction to AI Agents</h2>
+        <p><strong>Learning Objectives:</strong> Understand the basics of AI Agents.</p>
+        <p><strong>Video Links:</strong> 
+            <a href="https://bilibili.com/video/yourvideo1">Video 1 (Bilibili)</a>, 
+            <a href="https://zhihu.com/video/yourvideo1">Video 1 (Zhihu)</a>
+        </p>
+        <h3>Quiz Questions:</h3>
+        <p><strong>MCQ:</strong> What is an AI Agent? 
+            A. Just a program 
+            B. A program that can act autonomously 
+            C. A human-like robot 
+            D. None of the above
+        </p>
+        <p><strong>Open-ended:</strong> Describe your understanding of AI Agents in your words.</p>
+        <h3>Project Assignment:</h3>
+        <p>Analyze GDS reporting Agent costs in the context of the upcoming project.</p>
+    </div>
+    <div id="day-2" class="content">
+        <h2>Day 2: Deep Dive into AI Concepts</h2>
+        <p><strong>Learning Objectives:</strong> Gain insights into key AI concepts.</p>
+        <p><strong>Video Links:</strong> 
+            <a href="https://bilibili.com/video/yourvideo2">Video 2 (Bilibili)</a>, 
+            <a href="https://zhihu.com/video/yourvideo2">Video 2 (Zhihu)</a>
+        </p>
+        <h3>Quiz Questions:</h3>
+        <p><strong>MCQ:</strong> Which of the following is NOT a type of AI? 
+            A. Reactive 
+            B. Limited Memory 
+            C. General AI 
+            D. Specific AI
+        </p>
+        <p><strong>Open-ended:</strong> What do you think is the most significant aspect of AI?</p>
+        <h3>Project Assignment:</h3>
+        <p>Further analyze GDS reporting Agent costs with deeper insights.</p>
+    </div>
+    <div id="day-3" class="content">
+        <h2>Day 3: Implementing AI Agents</h2>
+        <p><strong>Learning Objectives:</strong> Learn how to implement basic AI Agents.</p>
+        <p><strong>Video Links:</strong> 
+            <a href="https://bilibili.com/video/yourvideo3">Video 3 (Bilibili)</a>, 
+            <a href="https://zhihu.com/video/yourvideo3">Video 3 (Zhihu)</a>
+        </p>
+        <h3>Quiz Questions:</h3>
+        <p><strong>MCQ:</strong> What programming language is often used for AI? 
+            A. Python 
+            B. Java 
+            C. C++ 
+            D. All of the above
+        </p>
+        <p><strong>Open-ended:</strong> What challenges do you foresee in AI Agent implementation?</p>
+        <h3>Project Assignment:</h3>
+        <p>Work on the implementation of the analysis module for GDS reporting Agent costs.</p>
+    </div>
+    <div id="day-4" class="content">
+        <h2>Day 4: Monitoring and Evaluation</h2>
+        <p><strong>Learning Objectives:</strong> Understand how to monitor and evaluate AI Agents.</p>
+        <p><strong>Video Links:</strong> 
+            <a href="https://bilibili.com/video/yourvideo4">Video 4 (Bilibili)</a>, 
+            <a href="https://zhihu.com/video/yourvideo4">Video 4 (Zhihu)</a>
+        </p>
+        <h3>Quiz Questions:</h3>
+        <p><strong>MCQ:</strong> What is critical for monitoring AI performance? 
+            A. Data analysis 
+            B. User feedback 
+            C. Both A and B 
+            D. None of the above
+        </p>
+        <p><strong>Open-ended:</strong> What metrics would you consider vital for evaluating AI agents?</p>
+        <h3>Project Assignment:</h3>
+        <p>Evaluate the initial analysis performed on GDS reporting Agent costs and refine it.</p>
+    </div>
+    <div id="day-5" class="content">
+        <h2>Day 5: Final Project Work and Review</h2>
+        <p><strong>Learning Objectives:</strong> Consolidate learning and prepare for the final project.</p>
+        <p><strong>Video Links:</strong> 
+            <a href="https://bilibili.com/video/yourvideo5">Video 5 (Bilibili)</a>, 
+            <a href="https://zhihu.com/video/yourvideo5">Video 5 (Zhihu)</a>
+        </p>
+        <h3>Quiz Questions:</h3>
+        <p><strong>MCQ:</strong> What is the final assignment about? 
+            A. Presenting findings 
+            B. Analyzing data 
+            C. Both A and B 
+            D. None of the above
+        </p>
+        <p><strong>Open-ended:</strong> Reflect on your journey through Week 1 and your expectations moving forward.</p>
+        <h3>Project Assignment:</h3>
+        <p>Complete the GDS reporting Agent costs final analysis and prepare a presentation.</p>
+    </div>
+
+    <div class="percentage-bar">
+        <div class="percentage-fill" style="width: 50%;"></div>
+    </div>
+    <script>
+        var tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                var day = this.getAttribute('data-day');
+                document.querySelectorAll('.content').forEach(function(content) {
+                    content.classList.remove('active');
+                });
+                document.querySelector('#day-' + day).classList.add('active');
+                tabs.forEach(function(t) {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        var collapsibles = document.getElementsByClassName('collapsible');
+        for (let i = 0; i < collapsibles.length; i++) {
+            collapsibles[i].addEventListener('click', function() {
+                this.classList.toggle('active');
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 </html>
