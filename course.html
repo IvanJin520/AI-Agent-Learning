@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent 学习系统 - 第 1 周课程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .nav-tab {
+            background: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #333;
+            border: 2px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .content-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: none;
+        }
+        
+        .content-section.active {
+            display: block;
+        }
+        
+        .day-title {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .section-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .section-title {
+            color: #667eea;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .learning-objectives ul {
+            margin-left: 20px;
+        }
+        
+        .learning-objectives li {
+            margin: 8px 0;
+        }
+        
+        .resources {
+            background: #f0f8f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        
+        .resources a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .quiz-item {
+            margin: 20px 0;
+            padding: 15px;
+            background: #fff3e0;
+            border-radius: 5px;
+            border-left: 4px solid #ff9800;
+        }
+        
+        .quiz-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .answer {
+            margin-top: 10px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .answer.show {
+            display: block;
+        }
+        
+        .answer-toggle {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .answer-toggle:hover {
+            background: #764ba2;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
+            font-size: 14px;
+            min-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 AI Agent 学习系统</h1>
+            <p>从零基础到实现航空规则库工具化 | 为 IvanJin520 定制</p>
+        </div>
+        
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="switchTab(event, 'day1')">📖 第 1 天</div>
+            <div class="nav-tab" onclick="switchTab(event, 'day2')">📖 第 2 天</div>
+            <div class="nav-tab" onclick="switchTab(event, 'day3')">📖 第 3 天</div>
+            <div class="nav-tab" onclick="switchTab(event, 'day4')">📖 第 4 天</div>
+            <div class="nav-tab" onclick="switchTab(event, 'day5')">📖 第 5 天</div>
+        </div>
+        
+        <!-- 第 1 天 -->
+        <div id="day1" class="content-section active">
+            <div class="day-title">第 1 天：AI 和 LLM 基础概念</div>
+            
+            <div class="section-box">
+                <div class="section-title">学习目标</div>
+                <div class="learning-objectives">
+                    <ul>
+                        <li>理解什么是 AI、机器学习、深度学习的区别</li>
+                        <li>理解什么是大模型（LLM）</li>
+                        <li>理解 Token 的概念（直接关系到你的成本问题）</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">📹 推荐学习资源</div>
+                <div class="resources">
+                    <p><strong>视频课程（中文，15 分钟）：</strong></p>
+                    <p><a href="https://www.bilibili.com/video/BV1hm411y7gL" target="_blank">👉 5 分钟理解什么是 AI 大模型</a></p>
+                    
+                    <p style="margin-top: 15px;"><strong>文字资源（关键，必读）：</strong></p>
+                    <p><a href="https://zhuanlan.zhihu.com/p/629825892" target="_blank">👉 深入理解 Token：LLM 成本计算指南</a></p>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">🎯 课后巩固题</div>
+                
+                <div class="quiz-item">
+                    <strong>第 1 题：Token 在 AI 中的作用是什么？</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>A. 代表模型的权重</li>
+                        <li>B. 用来计费的单位，也是模型处理的基本单位</li>
+                        <li>C. 代表 AI 的智力水平</li>
+                        <li>D. 用来存储用户信息</li>
+                    </ul>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 正确答案：B</strong></p>
+                        <p>Token 是 AI 模型处理信息的最小单位。当你和 AI 交互时，你的输入和 AI 的输出都会被转换成 Token，然后被模型处理。API 服务商根据消耗的 Token 数量来计费。</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-item">
+                    <strong>第 2 题：你说的 800 万 Token 大约相当于多少汉字？</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>A. 400 万</li>
+                        <li>B. 1600 万</li>
+                        <li>C. 800 万-1200 万</li>
+                        <li>D. 200 万</li>
+                    </ul>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 正确答案：C（800 万-1200 万）</strong></p>
+                        <p>中文是个比较复杂的语言。一个汉字通常需要 1-2 个 Token 来表示。这就是为什么你用 AI 问了几个问题就花了 800 万 Token。</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-item">
+                    <strong>第 3 题：什么是大语言模型（LLM）？用你自己的话解释（开放题）</strong>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看参考答案</button>
+                    <div class="answer">
+                        <p><strong>📝 参考答案：</strong></p>
+                        <p>大语言模型（LLM）是一种 AI 模型，经过大量文本数据的训练，能够理解和生成人类语言。它的"大"指的是模型的参数数量巨大（通常在十亿到数千亿）。LLM 的核心能力是：根据你给它的输入（提示词），预测和生成最可能的下一个 Token，从而形成有逻辑的输出。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第 2 天 -->
+        <div id="day2" class="content-section">
+            <div class="day-title">第 2 天：Agent 的核心概念和工作原理</div>
+            
+            <div class="section-box">
+                <div class="section-title">学习目标</div>
+                <div class="learning-objectives">
+                    <ul>
+                        <li>理解什么是 Agent</li>
+                        <li>理解 Agent 和普通 AI 的区别</li>
+                        <li>理解为什么 Agent 的 Token 消耗量大</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">📹 推荐学习资源</div>
+                <div class="resources">
+                    <p><strong>视频课程（中文，20 分钟）：</strong></p>
+                    <p><a href="https://www.bilibili.com/video/BV1r34y1u7zJ" target="_blank">👉 什么是 AI Agent？它能为你做什么？</a></p>
+                    
+                    <p style="margin-top: 15px;"><strong>文字资源（关键）：</strong></p>
+                    <p><a href="https://zhuanlan.zhihu.com/p/657763126" target="_blank">👉 Agent 工作原理详解：为什么它比 ChatGPT 更强大也更贵？</a></p>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">🎯 课后巩固题</div>
+                
+                <div class="quiz-item">
+                    <strong>第 4 题：Agent 和 ChatGPT 最根本的区别是什么？</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>A. Agent 更聪明</li>
+                        <li>B. ChatGPT 是免费的</li>
+                        <li>C. Agent 可以使用工具，并根据结果反复思考和调整</li>
+                        <li>D. Agent 只能用中文</li>
+                    </ul>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 正确答案：C</strong></p>
+                        <p>Agent 不仅能理解你的目标，还能决定要做什么、使用工具来执行、根据结果反馈继续调整，直到完成目标为止。每一步都在消耗 Token，这就是为什�� Agent 更贵。</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-item">
+                    <strong>第 5 题：如果一个 Agent 需要思考 5 次才能完成一个任务，而每次思考消耗 5000 Token，那么一个任务的成本是多少 Token？</strong>
+                    <ul style="margin-left: 20px; margin-top: 10px;">
+                        <li>A. 5000</li>
+                        <li>B. 25000</li>
+                        <li>C. 50000</li>
+                        <li>D. 无法确定</li>
+                    </ul>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 正确答案：B（25000）</strong></p>
+                        <p>计算：5 次思考 × 每次 5000 Token = 25000 Token。这就是为什么 Agent 这么贵。如果你能把"5 次思考"优化成"2 次思考"，成本就能降低 60%！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第 3 天 -->
+        <div id="day3" class="content-section">
+            <div class="day-title">第 3 天：降低 Token 成本的策略</div>
+            
+            <div class="section-box">
+                <div class="section-title">学习目标</div>
+                <div class="learning-objectives">
+                    <ul>
+                        <li>理解 Token 消耗的具体场景</li>
+                        <li>学会识别和优化高成本的 Agent 设计</li>
+                        <li>了解便宜的 LLM 服务选项</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">国内便宜 LLM 服务对比</div>
+                <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+                    <tr style="background: #f3f3f3;">
+                        <td style="border: 1px solid #ddd; padding: 10px;"><strong>服务商</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><strong>价格</strong></td>
+                        <td style="border: 1px solid #ddd; padding: 10px;"><strong>优势</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">火山引擎 Ark API</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">¥0.001/千 Token</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">最便宜，国内快速</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">阿里云百炼</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">¥0.004/千 Token</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">新用户送 100 万 Token</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 10px;">OpenAI GPT-4</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">¥0.03/千 Token</td>
+                        <td style="border: 1px solid #ddd; padding: 10px;">贵 30 倍</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">🎯 课后巩固题</div>
+                
+                <div class="quiz-item">
+                    <strong>第 6 题：如果你用 OpenAI GPT-4 的 Agent 做报价，一个月处理 1000 次，每次 25000 Token。费用是多少？</strong>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 答案计算：</strong></p>
+                        <p>1000 次 × 25000 Token ÷ 1000 × ¥0.03 = ¥750</p>
+                        <p style="margin-top: 10px;">一个月 ¥750，一年就是 ¥9000！</p>
+                    </div>
+                </div>
+                
+                <div class="quiz-item">
+                    <strong>第 7 题（关键）：如果改用国内模型（火山引擎，¥0.001/千 Token），同样的任务费用是多少？便宜多少倍？</strong>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 答案计算：</strong></p>
+                        <p>1000 次 × 25000 Token ÷ 1000 × ¥0.001 = ¥25</p>
+                        <p style="margin-top: 10px;">相比 OpenAI 便宜：¥750 ÷ ¥25 = <span style="background: #fff9c4;">30 倍</span></p>
+                        <p style="margin-top: 10px;">同样的功能，用国内模型只需要 ¥300 一年，用 OpenAI 需要 ¥9000 一年！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第 4 天 -->
+        <div id="day4" class="content-section">
+            <div class="day-title">第 4 天：你的目标场景 B 分析</div>
+            
+            <div class="section-box">
+                <div class="section-title">学习目标</div>
+                <div class="learning-objectives">
+                    <ul>
+                        <li>理解场景 B（航空规则库工具化）需要什么技术</li>
+                        <li>理解 Agent 在你的场景中扮演的角色</li>
+                        <li>制定具体的解决方案框架</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">📊 场景 B 的完整流程</div>
+                <pre style="background: #f3f3f3; padding: 15px; border-radius: 5px; overflow-x: auto;">
+输入：Excel 中的航空公司规则
+    ↓
+Agent 的工作：
+  1. 理解规则的含义
+  2. 提取关键信息
+  3. 组织成结构化数据
+  4. 生成 HTML 查询界面代码
+    ↓
+输出：一个静态 HTML 页面，员工可以搜索查询
+
+成本分析：
+  - 一次性成本：将所有规则转换成 HTML
+  - 用火山引擎（¥0.001/千 Token）：¥50-100
+  - 用 OpenAI（¥0.03/千 Token）：¥1500-3000
+  - 维护成本：每次更新规则时重新转换（通常很小）
+                </pre>
+            </div>
+            
+            <div class="section-box">
+                <div class="section-title">🎯 课后巩固题</div>
+                
+                <div class="quiz-item">
+                    <strong>第 8 题：假设你有 100 条航空公司规则，每条平均 500 字。用火山引擎转换成 HTML 需要多少成本？</strong>
+                    <button class="answer-toggle" onclick="toggleAnswer(event)">查看答案</button>
+                    <div class="answer">
+                        <p><strong>✅ 答案计算：</strong></p>
+                        <p>100 条 × 500 字 × 3（输入+输出+验证）÷ 1000 × ¥0.001 = ¥0.15-¥1.5</p>
+                        <p style="margin-top: 10px;">用 Agent 转换数据非常便宜！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第 5 天 -->
+        <div id="day5" class="content-section">
+            <div class="day-title">第 5 天：第一周总结 + 迷你项目</div>
+            
+            <div class="section-box" style="background: #f3e5f5; border-left: 5px solid #764ba2;">
+                <h3 style="color: #764ba2;">🎯 迷你项目：分析你公司的 GDS 报价 Agent 问题</h3>
+                
+                <p style="margin-bottom: 15px;"><strong>项目背景：</strong></p>
+                <p>根据你学到的 *
